@@ -1,7 +1,6 @@
 require 'docking_station'
 
 describe DockingStation do
-  it 'says boo' do
-    expect(nothing('boo')).to eq 'boo'
-  end
+  subject { DockingStation.new }
+  it { should respond_to(:release_bike)}
 end
