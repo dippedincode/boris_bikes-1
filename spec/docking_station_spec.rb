@@ -11,11 +11,10 @@ describe DockingStation do
   it { is_expected.to respond_to :dock_bike }
 
   it "takes a bike" do
-    p "test:"
-    p DockingStation.new.dock_bike
     stn = DockingStation.new
-    stn.dock_bike
-    expect(stn).to be_full
+    before = stn.bike_arr.count
+    stn.dock_bike(Bike.new)
+    expect(stn.bike_arr.count - before).to be 1
   end
 
 end

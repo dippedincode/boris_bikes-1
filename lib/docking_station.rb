@@ -1,20 +1,15 @@
 class DockingStation
-  attr_reader :is_full
+  attr_reader :bike_arr
 
   def initialize
-    @is_full = false
+    @bike_arr = []
   end
 
   def release_bike
     Bike.new
   end
 
-  def dock_bike
-    @is_full = true
-    return @is_full
-  end
-
-  def full?
-    return is_full
+  def dock_bike(bike)
+    @bike_arr.push(bike)
   end
 end
